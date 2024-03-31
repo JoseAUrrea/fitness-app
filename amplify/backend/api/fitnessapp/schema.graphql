@@ -1,0 +1,37 @@
+enum Gender {
+  MALE
+  FEMALE
+}
+
+type Fitness @model @auth(rules: [{allow: owner, ownerField: "userID"}]) {
+  id: ID!
+  date: AWSDate!
+  exerciseType: String!
+  caloriesBurned: Int
+  description: String
+  duration: Int
+  userID: ID! @index(name: "byUser")
+}
+
+type Nutrition @model @auth(rules: [{allow: owner, ownerField: "userID"}]) {
+  id: ID!
+  calories: Int!
+  macronutrients: String
+  micronutrients: String
+  description: String
+  date: AWSDate!
+  userID: ID! @index(name: "byUser")
+}
+
+type User @model @auth(rules: [{allow: owner, ownerField: "id"}]) {
+  id: ID!
+  email: String!
+  name: String
+  weight: Float
+  height: Int
+  gender: Gender
+  goals: String
+  age: Int
+  userNutrition: [Nutrition] @hasMany(indexName: "byUser", fields: ["id"])
+  Fitnesses: [Nutrition] @hasMany(indexName: "byUser", fields: ["id"])
+}

@@ -1,0 +1,58 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fitnessapp-dev-171636-authRole",
+      "UnauthRoleArn": "arn:aws:iam::996766256119:role/amplify-fitnessapp-dev-171636-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::996766256119:role/amplify-fitnessapp-dev-171636-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-fitnessapp-dev-171636-deployment",
+      "UnauthRoleName": "amplify-fitnessapp-dev-171636-unauthRole",
+      "StackName": "amplify-fitnessapp-dev-171636",
+      "StackId": "arn:aws:cloudformation:us-east-1:996766256119:stack/amplify-fitnessapp-dev-171636/c653c580-ee2a-11ee-b2e2-0e1ff3bc1605",
+      "AmplifyAppId": "d1palns5o7s84n",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-fitnessapp-dev-171636-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "fitnessapp9fca3620": {}
+      },
+      "function": {
+        "fitnessapp9fca3620PostConfirmation": {
+          "deploymentBucketName": "amplify-fitnessapp-dev-171636-deployment",
+          "s3Key": "amplify-builds/fitnessapp9fca3620PostConfirmation-4a435534433677745a75-build.zip"
+        }
+      },
+      "api": {
+        "fitnessapp": {}
+      }
+    }
+  },
+  "fitbackend": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fitnessapp-fitbackend-91732-authRole",
+      "UnauthRoleArn": "arn:aws:iam::996766256119:role/amplify-fitnessapp-fitbackend-91732-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::996766256119:role/amplify-fitnessapp-fitbackend-91732-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-fitnessapp-fitbackend-91732-deployment",
+      "UnauthRoleName": "amplify-fitnessapp-fitbackend-91732-unauthRole",
+      "StackName": "amplify-fitnessapp-fitbackend-91732",
+      "StackId": "arn:aws:cloudformation:us-east-1:996766256119:stack/amplify-fitnessapp-fitbackend-91732/2ebb9d00-ef7a-11ee-a30e-0affee7ec8a3",
+      "AmplifyAppId": "d1palns5o7s84n",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-fitnessapp-fitbackend-91732-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "fitnessapp9fca3620": {}
+      },
+      "function": {
+        "fitnessapp9fca3620PostConfirmation": {
+          "deploymentBucketName": "amplify-fitnessapp-fitbackend-91732-deployment",
+          "s3Key": "amplify-builds/fitnessapp9fca3620PostConfirmation-4a435534433677745a75-build.zip"
+        }
+      },
+      "api": {
+        "fitnessapp": {}
+      }
+    }
+  }
+}
