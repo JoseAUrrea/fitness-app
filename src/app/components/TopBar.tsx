@@ -77,13 +77,15 @@ const TopBar = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
           <Link href="/">
             <IoHomeOutline className="md:w-[30px] md:h-[30px] w-[25px] h-[25px] text-white "/>
           </Link>
-          <button 
-              ref={buttonRef}
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="rounded px-2"
-            >
-              <RxDropdownMenu className="md:w-[35px] md:h-[35px] w-[32px] h-[32px] text-white "/>
-          </button>
+          {authCheck && (
+            <button 
+                ref={buttonRef}
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="rounded px-2"
+              >
+                <RxDropdownMenu className="md:w-[35px] md:h-[35px] w-[32px] h-[32px] text-white "/>
+            </button>
+          )}
 
           <button
             className="bg-slate-600 rounded border border-slate-800 py-1 hover:bg-slate-400 hover:text-white px-2"
