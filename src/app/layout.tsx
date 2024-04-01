@@ -21,15 +21,16 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={` ${inter.className} flex items-start justify-between`}>
-        <Sidebar isLoggedIn={await isAuthenticated()}/>
-        <TopBar />
+      <body className={` ${inter.className} flex-col items-center `}>
+        <TopBar isLoggedIn={await isAuthenticated()}/>
+        <div className="flex-row">
+        {/* <Sidebar isLoggedIn={await isAuthenticated()}/> */}
         <Auth>
-          <main className="pt-10 w-full h-full">
+          <main className="pt-10 h-full w-full overflow-y-auto">
             {children}
           </main>
         </Auth>
-          
+        </div>
       </body>
 
     </html>

@@ -11,7 +11,7 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 
 const Sidebar = ( {isLoggedIn }: {isLoggedIn: boolean} ) => {
     const [authCheck, setAuthCheck ] = useState(isLoggedIn);
-    console.log("isLoggedIn: ", isLoggedIn);
+    //console.log("isLoggedIn: ", isLoggedIn);
     const [isSidebarOpen, setIsSideBarOpen] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -56,7 +56,7 @@ const Sidebar = ( {isLoggedIn }: {isLoggedIn: boolean} ) => {
     return (
         <>
             {!isSidebarOpen ? (
-                <div className = "w-1/5 border-r border-slate-400 min-h-screen p-4 flex-col pt-[65px]">
+                <div className = "fixed p-4 pt-[65px] border-r shadow w-1/5 h-screen">
                     {authCheck ? (
                         <div>
                             <button
@@ -88,7 +88,7 @@ const Sidebar = ( {isLoggedIn }: {isLoggedIn: boolean} ) => {
                     
                 </div>
             ) : (
-                <div className = "w-[80px] border-r border-slate-400 min-h-screen p-4 flex-col pt-[65px]">
+                <div className = "fixed p-4 pt-[65px] border-r shadow w-1/8 h-screen">
                     <button
                         ref={buttonRef}
                         onClick={() => toggleSidebar()} 

@@ -65,7 +65,7 @@ const EditInfo = () => {
 
   return (
     <div className="w-full">
-      <div className="sm:w-[400px] w-[200px] my-6 bg-slate-400 p-8 rounded-md">
+      <div className="sm:w-[400px] w-[300px] my-6 bg-slate-400 p-8 rounded-md">
         <h2 className="text-[18px] pb-4"> Edit your attributes</h2>
         <hr></hr>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-1 pt-4">

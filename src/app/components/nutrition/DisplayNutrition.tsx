@@ -17,7 +17,18 @@ const  DisplayNutrition = async () => {
         query: queries.listNutritions,
         variables: { filter: { userID: { eq: user.userId } } },
     });
-    // console.log("data", data.listNutritions.items);
+    
+    if(data.listNutritions.items.length === 0) {
+        return (
+            <div className="mt-6 flex-col items-center">
+                <h1 className="mt-6">Nutrition</h1>
+                <hr />
+                <p className="my-6 text-gray-600">No nutritional information recorded yet</p>
+                <p className="text-[15px] text-gray-600">Enter nutrition on the home page</p>
+            </div>
+        )
+    }
+
     return (
         <>
             <h1>Nutrition</h1>

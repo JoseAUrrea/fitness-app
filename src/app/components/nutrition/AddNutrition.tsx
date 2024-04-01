@@ -7,7 +7,7 @@ const AddNutrition = () => {
 
     return (
         <div>
-            <div className="w-[400px] my-6 bg-slate-400 p-8 rounded-md">
+            <div className="sm:w-[400px] w-[300px] my-6 bg-slate-400 p-8 rounded-md">
             <h1 className="text-[20px] pb-2">Just had a meal?</h1>
             <h2 className="text-[15px] pb-4"> Add your nutrition here</h2>
             <hr></hr>

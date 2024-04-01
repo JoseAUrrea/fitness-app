@@ -19,6 +19,17 @@ const DisplayWorkouts = async () => {
         
     });
 
+    if(data.listFitnesses.items.length === 0) {
+        return (
+            <div className="mt-6 flex-col items-center">
+                <h1 className="mt-6">Workout & Fitness</h1>
+                <hr />
+                <p className="my-6 text-gray-600">No workouts recorded yet</p>
+                <p className="text-[15px] text-gray-600">Enter workout and fitness on the home page</p>
+            </div>
+        )
+    }
+
     return (
         <>
             <h1 className="mt-6">Workout & Fitness</h1>
