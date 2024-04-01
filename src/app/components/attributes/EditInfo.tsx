@@ -43,6 +43,9 @@ const EditInfo = () => {
       } catch (error) {
         console.error("Error fetching user info:", error);
       }
+      finally {
+        setInfoLoading(false);
+      }
     };
 
     fetchData();
