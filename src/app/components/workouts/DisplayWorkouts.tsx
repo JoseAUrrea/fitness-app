@@ -1,7 +1,7 @@
 import { cookieBasedClient, getUser } from "@/app/utils/amplifyServerUtils";
 
 import * as queries from "@/graphql/queries";
-import { redirect } from "next/navigation";
+import { deleteFitness } from "@/app/actions/actions";
 
 
 const DisplayWorkouts = async () => {

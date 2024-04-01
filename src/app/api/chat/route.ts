@@ -45,17 +45,12 @@ export async function POST(req: Request, res: Response) {
         }
     })
 
-    console.log(userData, nutritionData, fitnessData)
 
-    // const userMessage = `Here is some information about myself: my age is ${userData.data.getUser?.age}, my 
-    
-    
-    // `
     const userContent = `Here is some information about myself:\n`;
     const nutritionContent = `My nutrition data:\n`;
     const fitnessContent = `My fitness data:\n`;
     const userMessageContent = `${userContent} ${JSON.stringify(userData)}\n\n${nutritionContent} ${JSON.stringify(nutritionData)}\n\n${fitnessContent} ${JSON.stringify(fitnessData)}, additional information provided: ${messages[0].content}`;
-    console.log(userMessageContent);
+    // console.log(userMessageContent);
     const gptResponse = await openai.chat.completions.create({
         model: 'gpt-3.5-turbo',
         stream: true,

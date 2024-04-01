@@ -1,4 +1,3 @@
-// useOutsideClick.ts
 "use client"
 import { useEffect } from "react";
 

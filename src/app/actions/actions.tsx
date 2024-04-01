@@ -37,7 +37,7 @@ export async function createNutrition(formData: FormData){
         }
     });
     console.log("create nutrition", data);
-    redirect("/history")
+    redirect("/nutritionHistory")
 }
 
 
@@ -70,7 +70,7 @@ export async function createWorkout(formData: FormData){
         }
     });
     console.log("create workout", data);
-    redirect("/history")
+    redirect("/workoutHistory")
 }
 
 //edit user attributes
@@ -168,7 +168,7 @@ export async function getData() {
     }
 }
 
-//delete fitness
+
 export async function deleteFitness(fitnessId: string) {
     try {
         const { data } = await cookieBasedClient.graphql({
@@ -180,9 +180,26 @@ export async function deleteFitness(fitnessId: string) {
             }
         });
 
-        console.log("Fitness deleted:", data);
-        // Optionally, you can add logic to handle success or error cases here
+        console.log("Fitness deleted");
     } catch (error) {
         console.error("Error deleting fitness:", error);
     }
 }
+
+export async function deleteNutrition(nutritionId: string) {
+    try {
+        const { data } = await cookieBasedClient.graphql({
+            query: mutations.deleteNutrition,
+            variables: {
+                input: {
+                    id: nutritionId
+                }
+            }
+        });
+        console.log("Nutrition deleted");
+    } catch (error) {
+        console.log("Error deleting nutrition:", error);
+    }
+}
+
+
