@@ -20,6 +20,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Building
+
+Run the build:
+
+npm run build
+
+#once completed, run:
+
+npm run start
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
@@ -29,10 +39,38 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy on Amplify
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# fitness-app
-# fitness-app
+- In the AWS Management console, go to Amplify and then to the apps section.
+- Here you can select a hosting environment, choose GitHub.
+- Attach the GitHub repo
+- Choose your backend environment 
+- Create a new user role to manage the hosting
+- Add your OPENAI_API_KEY to the environment variables
+- Edit the build settings to have the following:
+    version: 1
+    backend:
+      phases:
+        build:
+          commands:
+            - '# Execute Amplify CLI with the helper script'
+            - amplifyPush --simple
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm i
+            - npm ci --cache .npm --prefer-offline
+        build:
+          commands:
+            - env | grep -e OPENAI_API_KEY >> .env.production
+            - npm run build
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - .next/cache/**/*
+          - .npm/**/*
+- Deploy the project
