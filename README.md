@@ -1,5 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Information
+
+This web application is made for users to get tailored and personalized recommendations to reach their fitness, health, and nutrition goals.
+
+Tech Stack:
+Next.js framework, React, Tailwind, TypeScript, AWS back-end environment(GraphQL, DynamoDB, Cognito, Lambda, AppSync, API Gateway)
+
+
 ## Getting Started
 
 First, run the development server:
